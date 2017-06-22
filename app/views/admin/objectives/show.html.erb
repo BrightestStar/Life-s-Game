@@ -4,15 +4,17 @@
         <%= @objective.name %>
     </h1>
 
+    <div class="pull-right">
+        <button class="button"><%= link_to 'Edit', edit_admin_objective_path(@objective) %></button>
+        <button class="button"><%= link_to 'Delete', admin_objective_path(@objective), method: :delete, data: { confirm: "Are you sure?"} %></button>
+    </div>
+
     <p class="date">
         Submitted
         <%= time_ago_in_words(@objective.created_at) %>
         Ago
-        |
-        <%= link_to 'Edit', edit_admin_objective_path(@objective) %>
-        |
-        <%= link_to 'Delete', admin_objective_path(@objective), method: :delete, data: { confirm: "Are you sure?"} %>
     </p>
+
     <p class="body">
         <%= @objective.task %>
     </p>

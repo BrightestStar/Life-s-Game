@@ -1,4 +1,6 @@
 class Admin::ObjectivesController < ApplicationController
+
+  layout "admin"
   def index
     @objectives = Objective.all
   end
