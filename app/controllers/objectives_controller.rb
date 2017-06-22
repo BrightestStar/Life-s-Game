@@ -19,6 +19,7 @@ class ObjectivesController < ApplicationController
 
   def show
     @objective = Objective.find(params[:id])
+    @posts = @objective.posts
   end
 
   def edit

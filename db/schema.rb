@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622052541) do
+ActiveRecord::Schema.define(version: 20170622072957) do
 
   create_table "objectives", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20170622052541) do
     t.text "third"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "first"
+    t.text "second"
+    t.text "third"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "objective_id"
   end
 
 end

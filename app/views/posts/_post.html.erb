@@ -1,0 +1,15 @@
+<div class="post clearfix">
+    <div class="post_content">
+
+        <%= post.first %></p>
+        <%= post.second %></p>
+        <%= post.third %></p>
+
+        <div class="btn btn-sm btn-primary pull-right">
+            <%= link_to '修改完成情况',edit_objective_post_path(post.objective, post)%>
+        </div>
+        <p class="post_time"><%= time_ago_in_words(post.created_at) %>
+            Ago</p>
+    </div>
+
+</div>

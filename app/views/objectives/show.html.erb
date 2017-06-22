@@ -5,8 +5,7 @@
     </h1>
 
     <div class="pull-right">
-        <button class="button"><%= link_to 'Edit', edit_objective_path(@objective) %></button>
-        <button class="button"><%= link_to 'Delete', objective_path(@objective), method: :delete, data: { confirm: "Are you sure?"} %></button>
+        <button class="button"><%= link_to '任务变更', edit_objective_path(@objective) %></button>
     </div>
 
     <p class="date">
@@ -25,4 +24,19 @@
         <%= @objective.third %>
     </p>
 
+</div>
+
+<hr>
+
+<div id="objective_content">
+    <%= link_to '任务开始', new_objective_post_path(@objective), class: "btn btn-primary" %>
+    <%= link_to '完成情况', objective_posts_path(@objective), class: "btn btn-primary" %>
+    <br>
+    <tr>
+    </tr>
+
+    <br>
+    <h4>
+        已完成<%= @objective.posts.count %>步，距离完成目标还有<%= 10 - @objective.posts.count %>步
+    </h4>
 </div>

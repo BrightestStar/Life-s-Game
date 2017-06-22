@@ -1,0 +1,41 @@
+<div id="objective_content">
+    <h2>
+        完成清单
+    </h2>
+    <div class="pull-right" style="padding-bottom: 20px;">
+        <%= link_to("继续任务", new_objective_post_path, class: "btn btn-primary btn-sm") %>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td><%= @objective.task %></td>
+                <td><%= @objective.second %></td>
+                <td><%= @objective.third %></td>
+                <td width="30%">任务管理</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+                <th>
+                    <%= post.id %>
+                </th>
+                <th>
+                    <%= post.first %>
+                </th>
+                <th>
+                    <%= post.second %>
+                </th>
+                <th>
+                    <%= post.third %>
+                </th>
+                <th>
+                    <%= link_to("修改", edit_objective_post_path(post.objective, post)) %>
+                </th>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>
