@@ -1,6 +1,4 @@
-class Admin::ObjectivesController < ApplicationController
-
-  layout "admin"
+class ObjectivesController < ApplicationController
   def index
     @objectives = Objective.all
   end
@@ -13,7 +11,7 @@ class Admin::ObjectivesController < ApplicationController
     @objective = Objective.new(objective_params)
 
     if @objective.save
-      redirect_to admin_objective_path
+      redirect_to objective_path(@objective)
     else
       render :new
     end
@@ -31,7 +29,7 @@ class Admin::ObjectivesController < ApplicationController
     @objective = Objective.find(params[:id])
 
     if @objective.update(objective_params)
-      redirect_to admin_objective_path
+      redirect_to objective_path(@objective)
     else
       render :edit
     end
@@ -40,7 +38,7 @@ class Admin::ObjectivesController < ApplicationController
   def destroy
     @objective = Objective.find(params[:id])
     @objective.destroy
-    redirect_to admin_objectives_path
+    redirect_to objectives_path
   end
 
   private
