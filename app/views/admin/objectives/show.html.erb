@@ -1,0 +1,26 @@
+<div id="objective_content">
+
+    <h1 class="title">
+        <%= @objective.name %>
+    </h1>
+
+    <p class="date">
+        Submitted
+        <%= time_ago_in_words(@objective.created_at) %>
+        Ago
+        |
+        <%= link_to 'Edit', edit_admin_objective_path(@objective) %>
+        |
+        <%= link_to 'Delete', admin_objective_path(@objective), method: :delete, data: { confirm: "Are you sure?"} %>
+    </p>
+    <p class="body">
+        <%= @objective.task %>
+    </p>
+    <p class="body">
+        <%= @objective.second %>
+    </p>
+    <p class="body">
+        <%= @objective.third %>
+    </p>
+
+</div>

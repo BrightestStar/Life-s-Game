@@ -1,0 +1,6 @@
+<% @objectives.each do |objective| %>
+<div class="objective_wrapper">
+    <h2 class="title"><%= link_to objective.name, admin_objective_path(objective) %></h2>
+    <p class="date"><%= objective.created_at.strftime("%B, %d, %Y")%></p>
+</div>
+<% end %>
