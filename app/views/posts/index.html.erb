@@ -2,9 +2,14 @@
     <h2>
         完成清单
     </h2>
+    <% if !user_signed_in? %>
+    <br><br>
+    <% end %>
+    <% if user_signed_in? %>
     <div class="pull-right" style="padding-bottom: 20px;">
         <%= link_to("继续任务", new_objective_post_path, class: "btn btn-primary btn-sm") %>
     </div>
+    <% end %>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -12,7 +17,10 @@
                 <td><%= @objective.task %></td>
                 <td><%= @objective.second %></td>
                 <td><%= @objective.third %></td>
+                <% if user_signed_in? %>
                 <td width="20%">任务管理</td>
+                <% end %>
+                <td width="20%">完成时间</td>
             </tr>
         </thead>
         <tbody>
@@ -30,9 +38,12 @@
                 <th>
                     <%= post.third %>
                 </th>
+                <% if user_signed_in? %>
                 <th>
                     <%= link_to("修改", edit_objective_post_path(post.objective, post)) %>
                 </th>
+                <% end %>
+                <th><%= post.created_at.strftime("%B, %d, %Y") %></th>
             </tr>
             <% end %>
         </tbody>

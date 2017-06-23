@@ -1,0 +1,28 @@
+<div id="objective_content">
+
+    <h2>登录</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+        *<%= f.label :邮箱 %><br/>
+        <%= f.email_field :email, required: false, autofocus: true %>
+        <br><br>
+        *<%= f.label :登录密码 %><br>
+        <%= f.password_field :password, required: false %>
+        <br><br>
+
+        <%= f.check_box :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.label :记住我 %>
+    </div>
+
+    <br><br>
+
+    <div class="form-actions">
+        <%= f.button :submit, "登录" %>
+    </div>
+    <% end %>
+
+    <br>
+
+    <%= render "devise/shared/links" %>
+</div>

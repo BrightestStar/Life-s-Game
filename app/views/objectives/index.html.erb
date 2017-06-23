@@ -1,9 +1,11 @@
 <% @objectives.each do |objective| %>
 <div class="objective_wrapper">
     <h2 class="title"><%= link_to objective.name, objective_path(objective) %></h2>
+    <% if user_signed_in? %>
     <div class="pull-right">
       <button class="button"><%= link_to '删除任务', objective_path(objective), method: :delete, data: { confirm: "Are you sure?"} %></button>
     </div>
+    <% end %>
     <p class="date"><%= objective.created_at.strftime("%B, %d, %Y")%></p>
 </div>
 <% end %>

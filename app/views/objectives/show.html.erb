@@ -3,10 +3,11 @@
     <h1 class="title">
         <%= @objective.name %>
     </h1>
-
+    <% if user_signed_in? %>
     <div class="pull-right">
         <button class="button"><%= link_to '任务变更', edit_objective_path(@objective) %></button>
     </div>
+    <% end %>
 
     <p class="date">
         Submitted
@@ -29,11 +30,12 @@
 <hr>
 
 <div id="objective_content">
+    <% if user_signed_in? %>
     <%= link_to '任务开始', new_objective_post_path(@objective), class: "btn btn-primary" %>
+    <% end %>
     <%= link_to '完成情况', objective_posts_path(@objective), class: "btn btn-primary" %>
     <br>
-    <tr>
-    </tr>
+    <tr></tr>
 
     <br>
     <h4>

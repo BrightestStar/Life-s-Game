@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @objective = Objective.find(params[:objective_id])
     @posts = @objective.posts
