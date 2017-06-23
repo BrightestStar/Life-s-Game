@@ -1,0 +1,12 @@
+<%= simple_form_for [@objective, @objective.comments.build]  do |f| %>
+
+<p class="date">
+    <%= f.label :内容 %><br>
+    <%= f.text_area :body %>
+</p>
+
+<p>
+    <%= f.submit "评论", data: { disable_with: "Submitting..." } %>
+</p>
+
+<% end %>

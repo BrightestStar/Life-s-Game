@@ -27,7 +27,7 @@
 
 </div>
 
-<hr>
+<br>
 
 <div id="objective_content">
     <% if current_user && current_user == @objective.user %>
@@ -41,4 +41,15 @@
     <h4>
         已完成<%= @objective.posts.count %>步，距离完成目标还有<%= 10 - @objective.posts.count %>步
     </h4>
+</div>
+<hr>
+<div id="objective_content">
+    <div id="posts">
+        <h3><%= @objective.comments.count %>
+            条评论</h3>
+        <br>
+        <%= render @objective.comments %>
+
+        <%= render "comments/form" %>
+    </div>
 </div>

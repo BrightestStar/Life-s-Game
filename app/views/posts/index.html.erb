@@ -48,3 +48,14 @@
     </table>
 
 </div>
+
+<div id="objective_content">
+    <div id="posts">
+        <h3><%= @objective.comments.count %>
+            条评论</h3>
+        <br>
+        <%= render @objective.comments %>
+
+        <%= render "comments/form" %>
+    </div>
+</div>
