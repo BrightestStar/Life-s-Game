@@ -3,6 +3,7 @@
     <head>
         <title>Life's Game</title>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
     </head>
@@ -18,7 +19,7 @@
             <ul>
                 <li class="category">Life's Game</li>
                 <li><%= link_to "任务清单", root_path %></li>
-                <li>关于我们</li>
+                <li><%= link_to '关于我们', about_path %></li>
             </ul>
 
             <ul>
@@ -46,7 +47,7 @@
                 <p>全部任务</p>
                 <% elsif current_page?(root_path) %>
                 <p>关于我们</p>
-                <% else %>
+            <% else %>
                 <%= link_to "返回主页", root_path %>
                 <% end %>
 
