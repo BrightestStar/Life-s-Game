@@ -18,7 +18,7 @@
             <ul>
                 <li class="category">Life's Game</li>
                 <li><%= link_to "任务清单", root_path %></li>
-                <li>关于</li>
+                <li>关于我们</li>
             </ul>
 
             <ul>
@@ -32,19 +32,29 @@
             </ul>
 
             <% if !user_signed_in? %>
-            <p class="sign_in"> <button class="button"> <%= link_to "GM 登录", new_user_session_path %></button></p>
+            <p class="sign_in">
+                <button class="button">
+                    <%= link_to "GM 登录", new_user_session_path %></button>
+            </p>
             <% end %>
 
         </div>
 
         <div id="main_content">
             <div id="header">
-                <p>All Posts</p>
+                <% if current_page?(root_path) %>
+                <p>全部任务</p>
+                <% elsif current_page?(root_path) %>
+                <p>关于我们</p>
+                <% else %>
+                <%= link_to "返回主页", root_path %>
+                <% end %>
 
                 <div class="buttons">
                     <button class="button"><%= link_to "新任务", new_objective_path %></button>
                     <% if user_signed_in? %>
-                    <button class="button"><%= link_to "Log Out", destroy_user_session_path, :method=> :delete %></button>
+                    <button class="button"><%= link_to "GM设置", edit_user_registration_path%></button>
+                    <button class="button"><%= link_to "退出", destroy_user_session_path, :method=> :delete %></button>
                     <% end %>
                 </div>
             </div>

@@ -6,6 +6,8 @@
       <button class="button"><%= link_to '删除任务', objective_path(objective), method: :delete, data: { confirm: "Are you sure?"} %></button>
     </div>
     <% end %>
-    <p class="date"><%= objective.created_at.strftime("%B, %d, %Y")%></p>
+    <br>
+    <p class="title">发布者：<%= objective.user.name%></p>
+    <p class="date">发布日期：<%= objective.created_at.strftime("%B, %d, %Y")%></p>
 </div>
 <% end %>

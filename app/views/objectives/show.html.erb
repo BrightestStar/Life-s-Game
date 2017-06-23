@@ -8,15 +8,20 @@
         <button class="button"><%= link_to '任务变更', edit_objective_path(@objective) %></button>
     </div>
     <% end %>
+    
+    <p class="date">发布者：<%= @objective.user.name%></p>
 
     <p class="date">
-        Submitted
+        发布时间：
         <%= time_ago_in_words(@objective.created_at) %>
         Ago
     </p>
 
+    <br>
+    <h3>任务如下：</h3>
+
     <p class="body">
-        <%= @objective.task %>
+        <%= @objective.task %>
     </p>
     <p class="body">
         <%= @objective.second %>

@@ -1,6 +1,6 @@
 <div id="objective_content">
     <h2>
-        完成清单
+        完成进度
     </h2>
     <br>
     <% if current_user && current_user == @objective.user %>
@@ -15,7 +15,7 @@
                 <td><%= @objective.task %></td>
                 <td><%= @objective.second %></td>
                 <td><%= @objective.third %></td>
-                <% if user_signed_in? %>
+                <% if current_user && current_user == @objective.user %>
                 <td width="20%">任务管理</td>
                 <% end %>
                 <td width="20%">完成时间</td>
@@ -36,9 +36,10 @@
                 <th>
                     <%= post.third %>
                 </th>
-                <% if user_signed_in? %>
+                <% if current_user && current_user == @objective.user %>
                 <th>
-                    <%= link_to("修改", edit_objective_post_path(post.objective, post)) %>
+                    <%= link_to("修改", edit_objective_post_path(post.objective, post)) %> |
+                    <%= link_to("删除", objective_post_path(post.objective, post), method: :delete, data: { confirm: "你确定吗？"} ) %>
                 </th>
                 <% end %>
                 <th><%= post.created_at.strftime("%B, %d, %Y") %></th>

@@ -1,0 +1,33 @@
+<div id="objective_content">
+    <h3>第X步(修改)</h3>
+
+    <%= simple_form_for [@objective, @post] do |f| %>
+    <br>
+    <p class="date">
+        <h4>任务：<%= @objective.task %></h4><br>
+        <%= f.label :完成情况 %>：
+        <br>
+        <%= f.text_field :first %>
+    </p>
+    <br>
+
+    <p class="date">
+        <h4>任务：<%= @objective.second %></h4><br>
+        <%= f.label :完成情况 %>：
+        <br>
+        <%= f.text_field :second %>
+    </p>
+    <br>
+
+    <p class="date">
+        <h4>任务：<%= @objective.third %></h4><br>
+        <%= f.label :完成情况 %>：
+        <br>
+        <%= f.text_field :third %>
+    </p>
+    <br>
+
+    <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+    <% end %>
+</div>
