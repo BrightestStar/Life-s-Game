@@ -11,12 +11,12 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <td>#</td>
-                <td><%= @objective.task %></td>
-                <td><%= @objective.second %></td>
-                <td><%= @objective.third %></td>
+                <td width="16%">任务单号</td>
+                <td width="16%"><%= @objective.task %></td>
+                <td width="16%"><%= @objective.second %></td>
+                <td width="16%"><%= @objective.third %></td>
                 <% if current_user && current_user == @objective.user %>
-                <td width="20%">任务管理</td>
+                <td width="16%">任务管理</td>
                 <% end %>
                 <td width="20%">完成时间</td>
             </tr>
@@ -25,7 +25,7 @@
             <% @posts.each do |post| %>
             <tr>
                 <th>
-                    <%= post.id %>
+                    第 <%= (post.created_at.to_date - @objective.created_at.to_date).to_i + 1 %> 天
                 </th>
                 <th>
                     <%= post.first %>

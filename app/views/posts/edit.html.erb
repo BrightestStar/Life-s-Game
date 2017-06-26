@@ -1,5 +1,11 @@
 <div id="objective_content">
-    <h3>第X步(修改)</h3>
+    <h3>
+        <% if (@post.created_at.to_date - @objective.created_at.to_date).to_i < 1 %>
+        第1天(修改)
+    <% else %>
+        第<%= (@post.created_at.to_date - @objective.created_at.to_date).to_i %>天(修改)
+        <% end %>
+    </h3>
 
     <%= simple_form_for [@objective, @post] do |f| %>
     <br>
