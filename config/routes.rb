@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   resources :objectives do
     resources :comments
     resources :posts
+    get 'award', to: 'objectives#award'
   end
 
   get '/about', to: 'pages#about'
+
 
 end

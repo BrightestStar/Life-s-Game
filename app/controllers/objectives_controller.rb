@@ -59,9 +59,13 @@ class ObjectivesController < ApplicationController
     redirect_to objectives_path
   end
 
+  def award
+    @objective = Objective.find(params[:objective_id])
+  end
+
   private
 
   def objective_params
-    params.require(:objective).permit(:name, :task, :second, :third, :user_id, :f_date)
+    params.require(:objective).permit(:name, :task, :second, :third, :user_id, :f_date, :award_first)
   end
 end

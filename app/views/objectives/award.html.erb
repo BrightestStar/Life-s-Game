@@ -1,0 +1,13 @@
+<div id="page_wrapper">
+
+    <div id="content">
+        <h2>你咋能这么牛B呢？</h2>
+        <p>除了你还有谁？</p>
+        <p>恭喜 <%= @objective.user.name%>，你完成了《<%= @objective.name %>》任务。</p>
+        <p>这是你应得的奖品。 你可以用自己的零花钱，买（<%= @objective.award_first %>）了。</p>
+    </div>
+    <br>
+
+    <%= link_to '查看任务', objective_path(@objective), class: "btn btn-primary" %>
+    <%= link_to '查看完成情况', objective_posts_path(@objective), class: "btn btn-primary" %>
+</div>

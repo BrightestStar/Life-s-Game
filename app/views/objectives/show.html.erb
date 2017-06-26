@@ -41,6 +41,9 @@
     <%= link_to '任务开始', new_objective_post_path(@objective), class: "btn btn-primary" %>
     <% end %>
     <%= link_to '完成情况', objective_posts_path(@objective), class: "btn btn-primary" %>
+    <% if (@objective.f_date.to_date - @objective.created_at.to_date).to_i - @objective.posts.count < 0%>
+    <%= link_to '领取奖励', objective_award_path(@objective), class: "btn btn-danger" %>
+    <% end %>
     <br>
     <tr></tr>
 
