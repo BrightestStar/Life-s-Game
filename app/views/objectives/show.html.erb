@@ -16,7 +16,10 @@
         <%= time_ago_in_words(@objective.created_at) %>
         Ago
     </p>
-
+    <br>
+    <p class="date">
+        <h4>计划于<%= @objective.f_date %>完成</h4>
+    </p>
     <br>
     <h3>任务如下：</h3>
 
