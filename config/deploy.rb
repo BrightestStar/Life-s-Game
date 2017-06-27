@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock "3.8.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "LIG"
+set :repo_url, "git@github.com:BrightestStar/Life-s-Game.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
