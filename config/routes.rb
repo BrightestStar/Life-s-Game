@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/about', to: 'pages#about'
+  get '/pay', to: 'pages#pay'
 
 
 end
