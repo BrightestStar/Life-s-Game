@@ -52,7 +52,7 @@ end
 
 group :development do
   gem "capistrano", "~> 3.4"
-  gem "capistrano-rvm"
+  gem 'rvm1-capistrano3', require: false
   gem "capistrano-rails"
 end
 
