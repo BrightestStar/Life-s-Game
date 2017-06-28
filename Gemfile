@@ -55,6 +55,7 @@ group :development do
   gem 'capistrano-ssh-doctor', '~> 1.0'
   gem 'rvm1-capistrano3', require: false
   gem "capistrano-rails"
+  gem 'capistrano-passenger'
 end
 
 group :development do
