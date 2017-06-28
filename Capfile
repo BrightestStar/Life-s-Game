@@ -25,6 +25,7 @@ require "capistrano/deploy"
 
 require 'capistrano/ssh_doctor'
 require 'rvm1/capistrano3'
+require "capistrano/rbenv"
 require "capistrano/bundler"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
