@@ -33,12 +33,3 @@ set :passenger_restart_with_touch, true
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-namespace :rvm1 do # https://github.com/rvm/rvm1-capistrano3/issues/45
-  desc "Setup bundle alias"
-  task :create_bundle_alias do
-    on release_roles :all do
-      execute %Q{echo "alias bundle='#{fetch(:rvm1_auto_script_path)}/rvm-auto.sh . bundle'" > ~/.bash_aliases}
-    end
-  end
-end
-after "rvm1:install:rvm", "rvm1:create_bundle_alias"
