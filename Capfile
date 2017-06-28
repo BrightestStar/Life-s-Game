@@ -23,6 +23,7 @@ require "capistrano/deploy"
 # require "capistrano/rails/migrations"
 # require "capistrano/passenger"
 
+require 'capistrano/ssh_doctor'
 require 'rvm1/capistrano3'
 require "capistrano/bundler"
 require "capistrano/rails/assets"
