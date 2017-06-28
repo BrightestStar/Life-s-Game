@@ -1,14 +1,14 @@
 # config valid only for current version of Capistrano
 lock "3.8.0"
 
-set :application, "Life-s-Game"
+set :application, "LIG"
 set :repo_url, "git@github.com:BrightestStar/Life-s-Game.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/apps/Life-s-Game"
+set :deploy_to, "/home/apps/LIG"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
