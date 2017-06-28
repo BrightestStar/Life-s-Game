@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.8.0"
 
-set :application, "LsG"
+set :application, "Life-s-Game"
 set :repo_url, "git@github.com:BrightestStar/Life-s-Game.git"
 
 # Default branch is :master
