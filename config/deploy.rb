@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:BrightestStar/Life-s-Game.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/apps/LIG"
+set :deploy_to, "/home/apps/Life_is_Game/LIG"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
