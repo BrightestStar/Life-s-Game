@@ -52,6 +52,7 @@ end
 
 group :development do
   gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-passenger'
 end
 
