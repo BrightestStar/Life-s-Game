@@ -10,8 +10,6 @@ set :repo_url, "https://github.com/BrightestStar/Life-s-Game.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/apps/Life-s-Game"
 
-set :keep_releases, 5
-
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -32,6 +30,9 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/syst
 set :passenger_restart_with_touch, true
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :rvm_ruby_version, '1.9.3-p448'
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
