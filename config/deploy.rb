@@ -13,8 +13,8 @@ set :deploy_to, "/home/apps/Life-s-Game"
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
-set :rbenv_type, :system # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.0.0-p247'
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby
 
 # in case you want to set ruby version from the file:
 # set :rbenv_ruby, File.read('.ruby-version').strip
