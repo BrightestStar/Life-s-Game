@@ -9,6 +9,7 @@ set :repo_url, "https://github.com/BrightestStar/Life-s-Game.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/apps/Life-s-Game"
+set :rbenv_path, '/home/apps/.rbenv/'
 
 set :keep_releases, 5
 
