@@ -34,9 +34,17 @@ install_plugin Capistrano::SCM::Git
 # require "capistrano/rails/migrations"
 # require "capistrano/passenger"
 
-require 'capistrano/rails'
-require 'capistrano/rbenv'
-require 'rvm1/capistrano3'
+task :use_rvm do
+  require 'capistrano/rvm'
+end
+
+task :require_bundler do
+  require 'capistrano/bundler'
+end
+
+task 'staging' => [:require_rvm, :require_bundler]
+task 'production' => [:require_bundler]
+
 require 'capistrano/passenger'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
