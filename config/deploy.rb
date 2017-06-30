@@ -19,8 +19,7 @@ set :rbenv_ruby
 # in case you want to set ruby version from the file:
 # set :rbenv_ruby, File.read('.ruby-version').strip
 
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} /usr/local/Cellar/rbenv/0.4.0 exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} /usr/local/bin/rbenv exec"
 set :rbenv_roles, :all # default valuey
 
 # You can configure the Airbrussh format using :format_options.
