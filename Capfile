@@ -45,7 +45,6 @@ end
 task 'staging' => [:require_rvm, :require_bundler]
 task 'production' => [:require_bundler]
 
-require 'capistrano/passenger'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 
