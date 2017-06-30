@@ -52,7 +52,6 @@ end
 
 group :development do
   gem 'capistrano-rails'
-  gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-passenger'
 end
 

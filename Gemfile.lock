@@ -219,7 +219,6 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3.6)
   byebug
-  capistrano-bundler (~> 1.2)
   capistrano-passenger
   capistrano-rails
   capybara (~> 2.13)
